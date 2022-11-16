@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./App.css";
 import Alert from "./components/Alert";
-// import About from "./components/About";
+import About from "./components/About";
 import Navbar from "./components/Navbar";
-import TextForm from "./components/TextForm";
+// import TextForm from "./components/TextForm";
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import { Link } from "react-router-dom";
 
@@ -49,23 +49,24 @@ function App() {
   return (
     <>
       {/* <Router> */}
-        <Navbar
-          title="TextNeeds"
-          mode={mode}
-          textColor={textColor}
-          toggleMode={toggleMode}
-          showAlert={showAlert}
-        />
-        <Alert alert={alert} />
+      <Navbar
+        title="TextNeeds"
+        mode={mode}
+        textColor={textColor}
+        toggleMode={toggleMode}
+        showAlert={showAlert}
+      />
+      <Alert alert={alert} />
 
-        <div className="container my-3">
-          <TextForm
+      <div className="container my-3">
+        {/* <TextForm
             heading="Enter the text to analyze below"
             mode={mode}
             showAlert={showAlert}
-          />
+          /> */}
+        <About mode={mode} />
 
-          {/* <Routes>
+        {/* <Routes>
             <Route
               // React does partial matching that's why we should use (exact path) instead of path.
               // /users --> Component 1
@@ -84,7 +85,7 @@ function App() {
 
             <Route exact path="/about" element={<About />} />
           </Routes> */}
-        </div>
+      </div>
       {/* </Router> */}
     </>
   );

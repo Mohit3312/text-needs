@@ -1,41 +1,63 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
+export default function About(props) {
+  // const [buttonText, setButtonText] = useState("Enable Dark Mode");
 
-  const [buttonText, setButtonText] = useState("Enable Dark Mode");
+  // if (props.mode === "dark") {
+  //   setMyStyle({
+  //     color: "white",
+  //     backgroundColor: "black",
+  //   });
+  // } else {
+  //   setMyStyle({
+  //     color: "black",
+  //     backgroundColor: "white",
+  //   });
+  // }
 
-  const toggleStyle = () => {
-    if (myStyle.color === "black") {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setButtonText("Enable Light Mode");
-    } else {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-      setButtonText("Enable Dark Mode");
-    }
-  };
+  // const toggleStyle = () => {
+  //   if (myStyle.color === "black") {
+  //     setMyStyle({
+  //       color: "white",
+  //       backgroundColor: "black",
+  //     });
+  //     setButtonText("Enable Light Mode");
+  //   } else {
+  //     setMyStyle({
+  //       color: "black",
+  //       backgroundColor: "white",
+  //     });
+  //     setButtonText("Enable Dark Mode");
+  //   }
+  // };
 
   return (
     <div
       className="container my-3 py-3 border border-dark rounded"
-      style={myStyle}
+      style={
+        props.mode === "light"
+          ? { color: "black", backgroundColor: "white" }
+          : { color: "white", backgroundColor: "#9e9e9e54" }
+      }
     >
       <h1>About Us</h1>
       <div
         className="accordion my-3 border border-dark rounded"
         id="accordionExample"
-        style={myStyle}
+        style={
+          props.mode === "light"
+            ? { color: "black", backgroundColor: "white" }
+            : { color: "white", backgroundColor: "black" }
+        }
       >
-        <div className="accordion-item" style={myStyle}>
+        <div
+          className="accordion-item"
+          style={
+            props.mode === "light"
+              ? { color: "black", backgroundColor: "white" }
+              : { color: "white", backgroundColor: "black" }
+          }
+        >
           <h2 className="accordion-header" id="headingOne">
             <button
               className="accordion-button"
@@ -44,9 +66,13 @@ export default function About() {
               data-bs-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
-              style={myStyle}
+              style={
+                props.mode === "light"
+                  ? { color: "black", backgroundColor: "white" }
+                  : { color: "white", backgroundColor: "rgb(153 16 16 / 83%)" }
+              }
             >
-              Accordion Item #1
+              <strong>Analyze Your text</strong>
             </button>
           </h2>
           <div
@@ -56,18 +82,19 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              TextNeeds gives you a way to analyze your text quickly and
+              efficiently.
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={myStyle}>
+        <div
+          className="accordion-item"
+          style={
+            props.mode === "light"
+              ? { color: "black", backgroundColor: "white" }
+              : { color: "white", backgroundColor: "black" }
+          }
+        >
           <h2 className="accordion-header" id="headingTwo">
             <button
               className="accordion-button collapsed"
@@ -76,9 +103,13 @@ export default function About() {
               data-bs-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
-              style={myStyle}
+              style={
+                props.mode === "light"
+                  ? { color: "black", backgroundColor: "white" }
+                  : { color: "white", backgroundColor: "rgb(153 16 16 / 83%)" }
+              }
             >
-              Accordion Item #2
+              <strong>Free to use</strong>
             </button>
           </h2>
           <div
@@ -88,18 +119,21 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              TextNeeds is a free character counter tool that provides instant
+              character count & word count statistics for a given text.
+              TextNeeds reports the number of words and characters. Thus it is
+              suitable for writing text with word/character limit.
             </div>
           </div>
         </div>
-        <div className="accordion-item" style={myStyle}>
+        <div
+          className="accordion-item"
+          style={
+            props.mode === "light"
+              ? { color: "black", backgroundColor: "white" }
+              : { color: "white", backgroundColor: "black" }
+          }
+        >
           <h2 className="accordion-header" id="headingThree">
             <button
               className="accordion-button collapsed"
@@ -108,9 +142,13 @@ export default function About() {
               data-bs-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
-              style={myStyle}
+              style={
+                props.mode === "light"
+                  ? { color: "black", backgroundColor: "white" }
+                  : { color: "white", backgroundColor: "rgb(153 16 16 / 83%)" }
+              }
             >
-              Accordion Item #3
+              <strong>Browser Compatible</strong>
             </button>
           </h2>
           <div
@@ -120,22 +158,18 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body">
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              This word counter software works in any web browsers such as
+              Chrome, Firefox, Internet Explorer, Safari, Opera. It suits to
+              count characters in facebook, blog, books, excel document, pdf
+              document, essays, etc.
             </div>
           </div>
         </div>
       </div>
 
-      <button type="button" onClick={toggleStyle} className="btn btn-primary">
+      {/* <button type="button" onClick={toggleStyle} className="btn btn-primary">
         {buttonText}
-      </button>
+      </button> */}
     </div>
   );
 }
