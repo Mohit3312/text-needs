@@ -117,28 +117,28 @@ export default function TextForm(props) {
           Convert to Uppercase
         </button>
         <button
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-secondary mx-1 my-1"
           disabled={text.length === 0}
           onClick={handleLowClick}
         >
           Convert to Lowercase
         </button>
         <button
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-danger mx-1 my-1"
           disabled={text.length === 0}
           onClick={handleClearClick}
         >
           Clear Text
         </button>
         <button
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-success mx-1 my-1"
           disabled={text.length === 0}
           onClick={handleCopy}
         >
           Copy Text
         </button>
         <button
-          className="btn btn-primary mx-1 my-1"
+          className="btn btn-warning mx-1 my-1"
           disabled={text.length === 0}
           onClick={handleExtraSpaces}
         >
