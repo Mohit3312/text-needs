@@ -27,7 +27,7 @@ function App() {
       setMode("dark");
       setTextColor("light");
       document.body.style.backgroundColor = "#3a405e";
-      showAlert("success", "Dark Mode has been enabled successfully!");
+      showAlert("success", "Dark Mode has been enabled!");
 
       // document.title = "TextNeeds - Dark Mode";
       // setInterval(() => {
@@ -40,7 +40,7 @@ function App() {
       setMode("light");
       setTextColor("dark");
       document.body.style.backgroundColor = "white";
-      showAlert("success", "Dark Mode has been disabled successfully!");
+      showAlert("success", "Dark Mode has been disabled!");
 
       // document.title = "TextNeeds - Light Mode";
     }

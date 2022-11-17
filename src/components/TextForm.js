@@ -43,13 +43,13 @@ export default function TextForm(props) {
     // navigator.clipboard.writeText(text.value);
     navigator.clipboard.writeText(text);
     // document.getSelection().removeAllRanges();
-    props.showAlert("success", "Text has been copied to clipboard!");
+    props.showAlert("success", "Text copied to clipboard!");
   };
 
   const handleExtraSpaces = () => {
     let newText = text.split(/ +/);
     setText(newText.join(" "));
-    props.showAlert("success", "Extra spaces have been removed!");
+    props.showAlert("success", "Extra spaces removed!");
   };
 
   const handleOnChange = (event) => {
